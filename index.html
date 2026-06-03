@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectrum Home Tutor - Premium Home Tuition Service</title>
+    <!-- FontAwesome for Stars and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Extra styles for New Features and Form */
+        .demo-badge {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(217, 179, 16, 0.6);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Registration Form Styles */
+        .registration-section {
+            padding: 60px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--secondary-color);
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <!-- Logo Image + Text Brand Name Side by Side -->
+        <div class="logo">
+            <img src="20230125_134335_0000.png" alt="Spectrum Home Tutor Logo">
+            <span class="logo-text">Spectrum <span>Home Tutor</span></span>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#why-choose-us">Why Us</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#book-demo">Book Tutor</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="#book-demo" class="cta-btn">Book 3 Days Demo</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="demo-badge"><i class="fas fa-gift"></i> Limited Time Offer: 3 Days Free Demo Class!</div>
+        <h1>Spectrum Home Tutor – Shaping Your Child's Bright Future!</h1>
+        <p>Are you looking for a dedicated, highly experienced, and qualified home tutor? Spectrum Home Tutor brings expert teachers straight to your doorstep, ensuring your child's academic excellence and personal growth.</p>
+        <div class="hero-btns">
+            <a href="#book-demo" class="btn btn-primary">Get 3 Days Free Trial</a>
+            <a href="#reviews" class="btn btn-secondary">Read Reviews</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="features" id="why-choose-us">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Verified Tutors</h3>
+                <p>All our tutors undergo strict background, CNIC, and educational document verification for absolute peace of mind.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Result Oriented</h3>
+                <p>We focus heavily on building strong conceptual foundations to ensure students achieve outstanding grades in exams.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-book-open"></i>
+                <h3>Montessori to O/A Levels</h3>
+                <p>Expert and professional tutors are available for all subjects from Montessori to Matric, F.Sc, and O/A Levels.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-clock"></i>
+                <h3>3 Days Free Trial</h3>
+                <p>Take a 3-day risk-free trial class before making a final decision. Your complete satisfaction is our top priority.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="registration-section" id="book-demo">
+        <h2 class="section-title">Book Your 3-Days Free Demo</h2>
+        <p style="margin-bottom: 30px; color: #555;">Please fill out this short form, and our educational consultants will contact you shortly.</p>
+        
+        <div class="form-container">
+            <form action="#">
+                <div class="form-group">
+                    <label for="parent-name">Parent's Name</label>
+                    <input type="text" id="parent-name" placeholder="E.g. Muhammad Ali" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone / WhatsApp Number</label>
+                    <input type="tel" id="phone" placeholder="E.g. 03001234567" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student-class">Child's Class / Grade</label>
+                    <input type="text" id="student-class" placeholder="E.g. Class 5, Matric, O-Levels" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">Select City</label>
+                    <select id="city" required>
+                        <option value="" disabled selected>Choose Your City</option>
+                        <option value="lahore">Lahore</option>
+                        <option value="islamabad">Islamabad</option>
+                        <option value="rawalpindi">Rawalpindi</option>
+                        <option value="gujranwala">Gujranwala</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="area">Area / Sector Location</label>
+                    <input type="text" id="area" placeholder="E.g. DHA Phase 5, G-11, Satellite Town" required>
+                </div>
+
+                <!-- Tutor Preference Added Here -->
+                <div class="form-group">
+                    <label for="tutor-preference">Tutor Preference</label>
+                    <select id="tutor-preference" required>
+                        <option value="" disabled selected>Select Tutor Type</option>
+                        <option value="male">Male Tutor</option>
+                        <option value="female">Female Tutor</option>
+                        <option value="any">Any (No Preference)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <h2 class="section-title">What Parents Say About Us</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-city="all">All Cities</button>
+            <button class="filter-btn" data-city="lahore">Lahore</button>
+            <button class="filter-btn" data-city="islamabad">Islamabad</button>
+            <button class="filter-btn" data-city="rawalpindi">Rawalpindi</button>
+        </div>
+
+        <div class="review-grid">
+            <div class="review-card" data-city="lahore">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"When hiring home tutors, safety is always our biggest concern. The best part about Spectrum Home Tutor is their proper background verification. The staff they provided is highly professional and respectful. JazakAllah khair!"</p>
+                <div class="reviewer-info">Muhammad Asif</div>
+                <div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> DHA, Lahore</div>
+            </div>
+
+            <div class="review-card" data-city="islamabad">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"I was searching for a tutor who could balance the school curriculum while gently teaching Islamic basics like Noorani Qaida and Namaz. Spectrum perfectly matched us with a qualified female tutor who is a Hafiza."</p>
+                <div class="reviewer-info">Ayesha Bilal</div>
+                <div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> G-11, Islamabad</div>
+            </div>
+
+            <div class="review-card" data-city="rawalpindi">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"Our previous private tutors used to make unexpected leaves constantly. However, Spectrum's home tutor is exceptionally punctual. They show up exactly on time and share a comprehensive progress report daily."</p>
+                <div class="reviewer-info">Engineer Rizwan Ahmed</div>
+                <div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> Saddar, Rawalpindi</div>
+            </div>
+
+            <div class="review-card" data-city="lahore">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"My daughter was struggling immensely with her 9th-grade Mathematics and Physics. Alhamdulillah, the teacher assigned by Spectrum completely removed her fear, helping her secure top marks in board exams."</p>
+                <div class="reviewer-info">Mrs. Shazia Khan</div>
+                <div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> Johar Town, Lahore</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>Spectrum Home Tutor</h3>
+            <p>Pakistan's most trusted premium home tuition network for targeted academic excellence.</p>
+            <p><i class="fas fa-phone"></i> +92 312 7343373 | <i class="fas fa-envelope"></i> theroyal930@gmail.com</p>
+        </div>
+        <p style="font-size: 13px; color: #ccc;">&copy; 2026 Spectrum Home Tutor. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923127343373" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- External JavaScript Link -->
+    <script src="script.js"></script>
+</body>
+</html>
