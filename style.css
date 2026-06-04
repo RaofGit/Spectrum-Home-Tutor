@@ -33,20 +33,20 @@ header {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Updated Logo Styling (Flex box for image + text alignment) */
+/* Header Logo Styling (Image + Text alignment) */
 .logo {
     display: flex;
     align-items: center;
     gap: 12px; /* Space between circle image and text name */
 }
 
-/* Square to Circle Logo transformation */
+/* Square to Circle Logo transformation in Header */
 .logo img {
     height: 50px;
-    width: 50px; /* Width must match height for a perfect circle */
-    border-radius: 50%; /* This forces the square image into a circle */
-    object-fit: cover; /* Prevents image from stretching inside the circle */
-    border: 2px solid var(--accent-color); /* Premium gold border around the circle */
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color); /* Premium gold border */
 }
 
 /* Logo Text Formatting */
@@ -88,7 +88,7 @@ nav a:hover {
     color: var(--primary-color);
 }
 
-/* Hero Section */
+/* Home / Hero Section (Original Background Image, Logo Watermark Removed) */
 .hero {
     background: linear-gradient(rgba(11, 60, 93, 0.85), rgba(11, 60, 93, 0.85)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
     color: #ffffff;
@@ -137,11 +137,15 @@ nav a:hover {
     color: var(--primary-color);
 }
 
-/* Why Choose Us Section */
+/* Why Choose Us Section (Watermark Opacity set to 0.94 for better visibility) */
 .features {
     padding: 60px 5%;
-    background-color: var(--bg-light);
     text-align: center;
+    /* Opacity changed to 0.94 so the watermark is clearly visible behind text */
+    background: 
+        linear-gradient(rgba(249, 249, 249, 0.94), rgba(249, 249, 249, 0.94)), 
+        url('20230125_134335_0000.png') no-repeat center center / 350px;
+    background-color: var(--bg-light);
 }
 
 .section-title {
@@ -189,10 +193,14 @@ nav a:hover {
     color: var(--primary-color);
 }
 
-/* Reviews Section & Filter Buttons */
+/* Reviews Section & Filter Buttons (Watermark Opacity set to 0.94 for better visibility) */
 .reviews {
     padding: 60px 5%;
     text-align: center;
+    /* Opacity changed to 0.94 so the watermark stands out beautifully on white background */
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), 
+        url('20230125_134335_0000.png') no-repeat center center / 380px;
     background-color: #ffffff;
 }
 
@@ -307,6 +315,12 @@ footer {
         font-size: 30px;
     }
     .logo {
-        flex-direction: row; /* Keep text and circle side-by-side on mobile */
+        flex-direction: row;
+    }
+    .features {
+        background-size: auto, 240px;
+    }
+    .reviews {
+        background-size: auto, 260px;
     }
 }
