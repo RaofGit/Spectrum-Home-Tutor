@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spectrum Home Tutor - Premium Home Tuition Service</title>
-    <!-- FontAwesome for Stars and Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- External CSS Link -->
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Smooth Scrolling Effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Feature Box Link Styling */
+        .feature-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .feature-link:hover {
+            transform: translateY(-5px);
+        }
+
         /* Extra styles for New Features and Form */
         .demo-badge {
             background-color: var(--accent-color);
@@ -86,9 +99,7 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header>
-        <!-- Logo Image + Text Brand Name Side by Side -->
         <div class="logo">
             <img src="20230125_134335_0000.png" alt="Spectrum Home Tutor Logo">
             <span class="logo-text">Spectrum <span>Home Tutor</span></span>
@@ -103,7 +114,6 @@
         <a href="#book-demo" class="cta-btn">Book 3 Days Demo</a>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="demo-badge"><i class="fas fa-gift"></i> Limited Time Offer: 3 Days Free Demo Class!</div>
         <h1>Spectrum Home Tutor – Shaping Your Child's Bright Future!</h1>
@@ -114,58 +124,77 @@
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
     <section class="features" id="why-choose-us">
         <h2 class="section-title">Why Choose Us?</h2>
         <div class="feature-grid">
-            <div class="feature-box">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Verified Tutors</h3>
-                <p>All our tutors undergo strict background, CNIC, and educational document verification for absolute peace of mind.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Result Oriented</h3>
-                <p>We focus heavily on building strong conceptual foundations to ensure students achieve outstanding grades in exams.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-book-open"></i>
-                <h3>Montessori to O/A Levels</h3>
-                <p>Expert and professional tutors are available for all subjects from Montessori to Matric, F.Sc, and O/A Levels.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-clock"></i>
-                <h3>3 Days Free Trial</h3>
-                <p>Take a 3-day risk-free trial class before making a final decision. Your complete satisfaction is our top priority.</p>
-            </div>
+            
+            <a href="#book-demo" class="feature-link">
+                <div class="feature-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Verified Tutors</h3>
+                    <p>All our tutors undergo strict background, CNIC, and educational document verification for absolute peace of mind.</p>
+                </div>
+            </a>
+
+            <a href="#book-demo" class="feature-link">
+                <div class="feature-box">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Result Oriented</h3>
+                    <p>We focus heavily on building strong conceptual foundations to ensure students achieve outstanding grades in exams.</p>
+                </div>
+            </a>
+
+            <a href="#book-demo" class="feature-link">
+                <div class="feature-box">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Montessori to O/A Levels</h3>
+                    <p>Expert and professional tutors are available for all subjects from Montessori to Matric, F.Sc, and O/A Levels.</p>
+                </div>
+            </a>
+
+            <a href="#book-demo" class="feature-link">
+                <div class="feature-box">
+                    <i class="fas fa-clock"></i>
+                    <h3>3 Days Free Trial</h3>
+                    <p>Take a 3-day risk-free trial class before making a final decision. Your complete satisfaction is our top priority.</p>
+                </div>
+            </a>
+            
         </div>
     </section>
 
-    <!-- Registration Form Section -->
     <section class="registration-section" id="book-demo">
         <h2 class="section-title">Book Your 3-Days Free Demo</h2>
         <p style="margin-bottom: 30px; color: #555;">Please fill out this short form, and our educational consultants will contact you shortly.</p>
         
         <div class="form-container">
-            <form action="#">
+            <!-- Integrated FormSubmit Email Service -->
+            <form action="https://formsubmit.co/raofahmad930@gmail.com" method="POST">
+                
+                <!-- Captcha/Spam Protection Bypass (Parents ko tangi nahi hogi) -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <!-- Email Subject Line -->
+                <input type="hidden" name="_subject" value="New Demo Registration - Spectrum Home Tutor">
+
                 <div class="form-group">
                     <label for="parent-name">Parent's Name</label>
-                    <input type="text" id="parent-name" placeholder="E.g. Muhammad Ali" required>
+                    <input type="text" id="parent-name" name="Parent_Name" placeholder="E.g. Muhammad Ali" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="phone">Phone / WhatsApp Number</label>
-                    <input type="tel" id="phone" placeholder="E.g. 03001234567" required>
+                    <input type="tel" id="phone" name="Phone_or_WhatsApp" placeholder="E.g. 03001234567" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="student-class">Child's Class / Grade</label>
-                    <input type="text" id="student-class" placeholder="E.g. Class 5, Matric, O-Levels" required>
+                    <input type="text" id="student-class" name="Child_Class_or_Grade" placeholder="E.g. Class 5, Matric, O-Levels" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="city">Select City</label>
-                    <select id="city" required>
+                    <select id="city" name="Selected_City" required>
                         <option value="" disabled selected>Choose Your City</option>
                         <option value="lahore">Lahore</option>
                         <option value="islamabad">Islamabad</option>
@@ -176,13 +205,12 @@
 
                 <div class="form-group">
                     <label for="area">Area / Sector Location</label>
-                    <input type="text" id="area" placeholder="E.g. DHA Phase 5, G-11, Satellite Town" required>
+                    <input type="text" id="area" name="Area_or_Location" placeholder="E.g. DHA Phase 5, G-11, Satellite Town" required>
                 </div>
 
-                <!-- Tutor Preference Added Here -->
                 <div class="form-group">
                     <label for="tutor-preference">Tutor Preference</label>
-                    <select id="tutor-preference" required>
+                    <select id="tutor-preference" name="Tutor_Preference" required>
                         <option value="" disabled selected>Select Tutor Type</option>
                         <option value="male">Male Tutor</option>
                         <option value="female">Female Tutor</option>
@@ -195,7 +223,6 @@
         </div>
     </section>
 
-    <!-- Reviews Section -->
     <section class="reviews" id="reviews">
         <h2 class="section-title">What Parents Say About Us</h2>
         <div class="filter-buttons">
@@ -236,7 +263,6 @@
         </div>
     </section>
 
-    <!-- Footer & Contact -->
     <footer id="contact">
         <div class="footer-content">
             <h3>Spectrum Home Tutor</h3>
@@ -246,10 +272,8 @@
         <p style="font-size: 13px; color: #ccc;">&copy; 2026 Spectrum Home Tutor. All Rights Reserved.</p>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/923127343373" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <!-- External JavaScript Link -->
     <script src="script.js"></script>
 </body>
 </html>
