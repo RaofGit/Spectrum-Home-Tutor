@@ -95,6 +95,15 @@
         .submit-btn:hover {
             background-color: var(--secondary-color);
         }
+
+        /* Force WhatsApp button to stay green */
+        .submit-btn.whatsapp-submit-btn {
+            background-color: #25d366 !important;
+            color: white !important;
+        }
+        .submit-btn.whatsapp-submit-btn:hover {
+            background-color: #1ebe57 !important;
+        }
     </style>
 </head>
 <body>
@@ -168,13 +177,10 @@
         <p style="margin-bottom: 30px; color: #555;">Please fill out this short form, and our educational consultants will contact you shortly.</p>
         
         <div class="form-container">
-            <!-- Integrated FormSubmit Email Service -->
             <form action="https://formsubmit.co/raofahmad930@gmail.com" method="POST">
                 
-                <!-- Captcha/Spam Protection Bypass (Parents ko tangi nahi hogi) -->
                 <input type="hidden" name="_captcha" value="false">
                 
-                <!-- Email Subject Line -->
                 <input type="hidden" name="_subject" value="New Demo Registration - Spectrum Home Tutor">
 
                 <div class="form-group">
@@ -218,7 +224,13 @@
                     </select>
                 </div>
                 
-                <button type="submit" class="submit-btn">Submit Request</button>
+                <div class="form-buttons" style="display: flex; gap: 15px; margin-top: 15px;">
+                    <button type="submit" class="submit-btn">Submit via Email</button>
+                    
+                    <button type="button" class="submit-btn whatsapp-submit-btn" onclick="sendToWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                </div>
             </form>
         </div>
     </section>
@@ -274,6 +286,6 @@
 
     <a href="https://wa.me/923127343373" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <script src="script.js"></script>
+    <script src="java.js"></script>
 </body>
 </html>
