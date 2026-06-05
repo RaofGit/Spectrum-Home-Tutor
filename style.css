@@ -299,6 +299,19 @@ footer {
     text-decoration: none;
 }
 
+/* WhatsApp Form Button Styling */
+.whatsapp-submit-btn {
+    background-color: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.whatsapp-submit-btn:hover {
+    background-color: #1ebe57;
+}
+
 /* Responsive Setup */
 @media (max-width: 768px) {
     header {
@@ -322,5 +335,12 @@ footer {
     }
     .reviews {
         background-size: auto, 260px;
+    }
+}
+
+/* Responsive adjustment for form buttons */
+@media (max-width: 480px) {
+    .form-buttons {
+        flex-direction: column;
     }
 }
