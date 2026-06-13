@@ -32,7 +32,7 @@
             padding: 8px 20px;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 20px;
             text-transform: uppercase;
             box-shadow: 0 0 15px rgba(217, 179, 16, 0.6);
@@ -40,7 +40,7 @@
         }
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
 
@@ -54,10 +54,13 @@
             max-width: 600px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             text-align: left;
+        }
+        @media (min-width: 480px) {
+            .form-container { padding: 40px; }
         }
         .form-group {
             margin-bottom: 20px;
@@ -70,15 +73,17 @@
         }
         .form-group input, .form-group select {
             width: 100%;
-            padding: 12px;
+            padding: 14px 12px; /* Increased padding for easier mobile typing */
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 15px;
+            border-radius: 6px;
+            font-size: 16px; /* Crucial: 16px prevents iOS Safari auto-zooming into input fields */
             outline: none;
             transition: 0.3s;
+            -webkit-appearance: none; /* Uniform styling across mobile OS devices */
         }
         .form-group input:focus, .form-group select:focus {
             border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(50, 140, 193, 0.2);
         }
         .submit-btn {
             width: 100%;
@@ -88,9 +93,13 @@
             padding: 14px;
             font-size: 16px;
             font-weight: 600;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px; /* Mobile accessibility touch target norm */
         }
         .submit-btn:hover {
             background-color: var(--secondary-color);
@@ -113,22 +122,32 @@
             <img src="20230125_134335_0000.png" alt="Spectrum Home Tutor Logo">
             <span class="logo-text">Spectrum <span>Home Tutor</span></span>
         </div>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
         <nav>
-            <a href="#">Home</a>
-            <a href="#why-choose-us">Why Us</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#book-demo">Book Tutor</a>
-            <a href="#contact">Contact</a>
+            <a href="#" onclick="document.getElementById('menu-toggle').checked = false;">Home</a>
+            <a href="#why-choose-us" onclick="document.getElementById('menu-toggle').checked = false;">Why Us</a>
+            <a href="#reviews" onclick="document.getElementById('menu-toggle').checked = false;">Reviews</a>
+            <a href="#book-demo" onclick="document.getElementById('menu-toggle').checked = false;">Book Tutor</a>
+            <a href="#contact" onclick="document.getElementById('menu-toggle').checked = false;">Contact</a>
+            <a href="#book-demo" class="nav-cta-mobile" onclick="document.getElementById('menu-toggle').checked = false;">Book 3 Days Demo</a>
         </nav>
-        <a href="#book-demo" class="cta-btn">Book 3 Days Demo</a>
+        
+        <a href="#book-demo" class="cta-btn header-cta-desktop">Book 3 Days Demo</a>
     </header>
 
     <section class="hero">
-        <div class="demo-badge"><i class="fas fa-gift"></i> Limited Time Offer: 3 Days Free Demo Class!</div>
+        <div class="demo-badge"><i class="fas fa-gift"></i> 3 Days Free Demo Class!</div>
         <h1>Spectrum Home Tutor – Shaping Your Child's Bright Future!</h1>
-        <p>Are you looking for a dedicated, highly experienced, and qualified home tutor? Spectrum Home Tutor brings expert teachers straight to your doorstep, ensuring your child's academic excellence and personal growth.</p>
+        <p>Are you looking for a dedicated, highly experienced, and qualified home tutor? Spectrum Home Tutor brings expert teachers straight to your doorstep, ensuring your child's academic excellence.</p>
         <div class="hero-btns">
-            <a href="#book-demo" class="btn btn-primary">Get 3 Days Free Trial</a>
+            <a href="#book-demo" class="btn btn-primary">Get Free Trial</a>
             <a href="#reviews" class="btn btn-secondary">Read Reviews</a>
         </div>
     </section>
@@ -174,13 +193,12 @@
 
     <section class="registration-section" id="book-demo">
         <h2 class="section-title">Book Your 3-Days Free Demo</h2>
-        <p style="margin-bottom: 30px; color: #555;">Please fill out this short form, and our educational consultants will contact you shortly.</p>
+        <p style="margin-bottom: 30px; color: #555; padding: 0 10px;">Please fill out this short form, and our educational consultants will contact you shortly.</p>
         
         <div class="form-container">
-            <form action="https://formsubmit.co/thespectrumhometuitionservices@gmail.com" method="POST">
+            <form id="demoForm" action="https://formsubmit.co/thespectrumhometuitionservices@gmail.com" method="POST">
                 
                 <input type="hidden" name="_captcha" value="false">
-                
                 <input type="hidden" name="_subject" value="New Demo Registration - Spectrum Home Tutor">
 
                 <div class="form-group">
@@ -202,10 +220,10 @@
                     <label for="city">Select City</label>
                     <select id="city" name="Selected_City" required>
                         <option value="" disabled selected>Choose Your City</option>
-                        <option value="lahore">Lahore</option>
-                        <option value="islamabad">Islamabad</option>
-                        <option value="rawalpindi">Rawalpindi</option>
-                        <option value="gujranwala">Gujranwala</option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Islamabad">Islamabad</option>
+                        <option value="Rawalpindi">Rawalpindi</option>
+                        <option value="Gujranwala">Gujranwala</option>
                     </select>
                 </div>
 
@@ -218,17 +236,16 @@
                     <label for="tutor-preference">Tutor Preference</label>
                     <select id="tutor-preference" name="Tutor_Preference" required>
                         <option value="" disabled selected>Select Tutor Type</option>
-                        <option value="male">Male Tutor</option>
-                        <option value="female">Female Tutor</option>
-                        <option value="any">Any (No Preference)</option>
+                        <option value="Male Tutor">Male Tutor</option>
+                        <option value="Female Tutor">Female Tutor</option>
+                        <option value="Any (No Preference)">Any (No Preference)</option>
                     </select>
                 </div>
                 
-                <div class="form-buttons" style="display: flex; gap: 15px; margin-top: 15px;">
+                <div class="form-buttons">
                     <button type="submit" class="submit-btn">Submit via Email</button>
-                    
                     <button type="button" class="submit-btn whatsapp-submit-btn" onclick="sendToWhatsApp()">
-                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Send via WhatsApp
                     </button>
                 </div>
             </form>
@@ -238,7 +255,7 @@
     <section class="reviews" id="reviews">
         <h2 class="section-title">What Parents Say About Us</h2>
         <div class="filter-buttons">
-            <button class="filter-btn active" data-city="all">All Cities</button>
+            <button class="filter-btn active" data-city="all">All</button>
             <button class="filter-btn" data-city="lahore">Lahore</button>
             <button class="filter-btn" data-city="islamabad">Islamabad</button>
             <button class="filter-btn" data-city="rawalpindi">Rawalpindi</button>
@@ -278,14 +295,41 @@
     <footer id="contact">
         <div class="footer-content">
             <h3>Spectrum Home Tutor</h3>
-            <p>Pakistan's most trusted premium home tuition network for targeted academic excellence.</p>
-            <p><i class="fas fa-phone"></i> +92 312 7343373 | <i class="fas fa-envelope"></i> spectrumhometuitionservices@gmail.com</p>
+            <p style="max-width: 500px; margin: 5px auto 15px auto;">Pakistan's most trusted premium home tuition network for targeted academic excellence.</p>
+            <p style="margin-bottom: 8px;"><i class="fas fa-phone"></i> +92 312 7343373</p>
+            <p><i class="fas fa-envelope"></i> spectrumhometuitionservices@gmail.com</p>
         </div>
-        <p style="font-size: 13px; color: #ccc;">&copy; 2026 Spectrum Home Tutor. All Rights Reserved.</p>
+        <p style="font-size: 12px; color: #ccc; margin-top: 20px;">&copy; 2026 Spectrum Home Tutor. All Rights Reserved.</p>
     </footer>
 
-    <a href="https://wa.me/923127343373" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/923127343373" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('parent-name').value;
+            const phone = document.getElementById('phone').value;
+            const grade = document.getElementById('student-class').value;
+            const city = document.getElementById('city').value;
+            const area = document.getElementById('area').value;
+            const preference = document.getElementById('tutor-preference').value;
+
+            if(!name || !phone || !grade || !city || !area || !preference) {
+                alert("Please fill in all details before submitting via WhatsApp.");
+                return;
+            }
+
+            const message = `*New Demo Registration - Spectrum Home Tutor*\n\n` +
+                            `• *Parent Name:* ${name}\n` +
+                            `• *WhatsApp:* ${phone}\n` +
+                            `• *Class/Grade:* ${grade}\n` +
+                            `• *City:* ${city}\n` +
+                            `• *Area:* ${area}\n` +
+                            `• *Preference:* ${preference}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/923127343373?text=${encodedMessage}`, '_blank');
+        }
+    </script>
     <script src="java.js"></script>
 </body>
-</html>
+                            </html>
