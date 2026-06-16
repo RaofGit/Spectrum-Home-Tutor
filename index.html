@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spectrum Home Tutor - Premium Home Tuition Service</title>
+    
+    <link rel="icon" type="image/png" href="20230125_134335_0000.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -73,13 +76,13 @@
         }
         .form-group input, .form-group select {
             width: 100%;
-            padding: 14px 12px; /* Increased padding for easier mobile typing */
+            padding: 14px 12px;
             border: 1px solid #ccc;
             border-radius: 6px;
-            font-size: 16px; /* Crucial: 16px prevents iOS Safari auto-zooming into input fields */
+            font-size: 16px; 
             outline: none;
             transition: 0.3s;
-            -webkit-appearance: none; /* Uniform styling across mobile OS devices */
+            -webkit-appearance: none; 
         }
         .form-group input:focus, .form-group select:focus {
             border-color: var(--secondary-color);
@@ -99,7 +102,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 48px; /* Mobile accessibility touch target norm */
+            min-height: 48px; 
         }
         .submit-btn:hover {
             background-color: var(--secondary-color);
@@ -200,6 +203,7 @@
                 
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="New Demo Registration - Spectrum Home Tutor">
+                <input type="hidden" name="_next" value="https://spectrumhometutors.com/thankyou.html">
 
                 <div class="form-group">
                     <label for="parent-name">Parent's Name</label>
@@ -304,32 +308,6 @@
 
     <a href="https://wa.me/923127343373" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-    <script>
-        function sendToWhatsApp() {
-            const name = document.getElementById('parent-name').value;
-            const phone = document.getElementById('phone').value;
-            const grade = document.getElementById('student-class').value;
-            const city = document.getElementById('city').value;
-            const area = document.getElementById('area').value;
-            const preference = document.getElementById('tutor-preference').value;
-
-            if(!name || !phone || !grade || !city || !area || !preference) {
-                alert("Please fill in all details before submitting via WhatsApp.");
-                return;
-            }
-
-            const message = `*New Demo Registration - Spectrum Home Tutor*\n\n` +
-                            `• *Parent Name:* ${name}\n` +
-                            `• *WhatsApp:* ${phone}\n` +
-                            `• *Class/Grade:* ${grade}\n` +
-                            `• *City:* ${city}\n` +
-                            `• *Area:* ${area}\n` +
-                            `• *Preference:* ${preference}`;
-
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/923127343373?text=${encodedMessage}`, '_blank');
-        }
-    </script>
     <script src="java.js"></script>
 </body>
-                            </html>
+</html>
