@@ -86,7 +86,7 @@ nav a:hover {
 }
 
 .nav-cta-mobile {
-    display: none; /* Only viewed inside mobile tray toggle */
+    display: none;
 }
 
 /* Desktop Call To Action Button */
@@ -107,7 +107,6 @@ nav a:hover {
     color: var(--primary-color);
 }
 
-/* Hidden elements for Desktop, used in Mobile Hamburgers */
 .menu-toggle {
     display: none;
 }
@@ -252,7 +251,6 @@ nav a:hover {
     color: #555;
 }
 
-/* Double input action panel configuration on dynamic screen layout */
 .form-buttons {
     display: flex;
     flex-direction: column;
@@ -288,7 +286,7 @@ nav a:hover {
     cursor: pointer;
     font-weight: 600;
     transition: 0.3s ease;
-    flex: 1 1 calc(50% - 8px); /* Neatly splits them into grids on tiny mobile viewports */
+    flex: 1 1 calc(50% - 8px); 
     max-width: 140px;
 }
 
@@ -341,7 +339,7 @@ nav a:hover {
 footer {
     background-color: var(--primary-color);
     color: #ffffff;
-    padding: 40px 6% 80px 6%; /* Extra baseline bottom padding to clear the persistent floating WhatsApp tab */
+    padding: 40px 6% 80px 6%; 
     text-align: center;
     font-size: 14px;
 }
@@ -352,7 +350,7 @@ footer {
     color: var(--accent-color);
 }
 
-/* WhatsApp Floating Button standard dimensions */
+/* WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -376,7 +374,7 @@ footer {
     transform: scale(0.9);
 }
 
-/* Responsive Scaling for Larger Handsets, Tablets, and Desktops */
+/* Responsive Scaling */
 @media (min-width: 480px) {
     .form-buttons {
         flex-direction: row;
@@ -411,7 +409,7 @@ footer {
     .section-title { font-size: 32px; }
 }
 
-/* Mobile Friendly Hamburger Dropdown logic via Checkbox CSS rules */
+/* Mobile Menu */
 @media (max-width: 768px) {
     .header-cta-desktop {
         display: none;
@@ -456,12 +454,10 @@ footer {
         border-bottom: none !important;
     }
 
-    /* When the checkbox is activated via user tap/touch, show navigation drawer */
     .menu-toggle:checked ~ nav {
         left: 0;
     }
 
-    /* Transforming Hamburger Lines into an 'X' close indicator when menu runs active */
     .menu-toggle:checked ~ .hamburger span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
@@ -471,4 +467,4 @@ footer {
     .menu-toggle:checked ~ .hamburger span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-        }
+}
