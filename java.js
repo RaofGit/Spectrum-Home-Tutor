@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 // Function to send form data to WhatsApp
 function sendToWhatsApp() {
     // 1. Get values from the form inputs
